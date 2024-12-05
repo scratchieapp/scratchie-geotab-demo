@@ -4,10 +4,36 @@ import React, { useState } from 'react';
 import { Award, Clock, Carrot } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
+type TimeRangeType = 'shift' | 'week' | 'month';
+
+interface Driver {
+  id: number;
+  name: string;
+  safetyScore: number;
+  currentStreak: number;
+  lastScratchie: number;
+  fuelEfficiency: number;
+  incidents: number;
+  harshEvents: number;
+  idleTime: string;
+  onTimeDeliveries: string;
+  hoursWorked: number;
+  trends: {
+    shift: string;
+    week: string;
+    month: string;
+  };
+  rank: {
+    shift: number;
+    week: number;
+    month: number;
+  };
+}
+
 const DriverLeaderboard = () => {
-  const [timeRange, setTimeRange] = useState('shift');
+  const [timeRange, setTimeRange] = useState<TimeRangeType>('shift');
   
-  const drivers = [
+  const drivers: Driver[] = [
     {
       id: 1,
       name: "John Smith",
@@ -197,7 +223,7 @@ const DriverLeaderboard = () => {
           <select 
             className="p-2 border rounded-md bg-white"
             value={timeRange}
-            onChange={(e) => setTimeRange(e.target.value)}
+            onChange={(e) => setTimeRange(e.target.value as TimeRangeType)}
           >
             <option value="shift">Current Shift</option>
             <option value="week">This Week</option>
