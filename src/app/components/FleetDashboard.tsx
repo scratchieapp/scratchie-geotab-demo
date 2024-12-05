@@ -1,9 +1,8 @@
 'use client'
 
 import React from 'react';
-import { Award, Truck, TrendingUp, Calendar, Fuel, AlertTriangle } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 const FleetDashboard = () => {
   // Example trend data
@@ -81,9 +80,6 @@ const FleetDashboard = () => {
       <div className="grid grid-cols-3 gap-6">
         {/* Safety Score Trends */}
         <Card className="col-span-2">
-          <CardHeader>
-            <CardTitle className="text-lg">Safety Score Trends</CardTitle>
-          </CardHeader>
           <CardContent>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
@@ -104,9 +100,6 @@ const FleetDashboard = () => {
 
         {/* Top Performers */}
         <Card className="col-span-1">
-          <CardHeader>
-            <CardTitle className="text-lg">Top Performers</CardTitle>
-          </CardHeader>
           <CardContent>
             <div className="space-y-4">
               {[
@@ -135,9 +128,6 @@ const FleetDashboard = () => {
 
         {/* ROI Metrics */}
         <Card className="col-span-2">
-          <CardHeader>
-            <CardTitle className="text-lg">Safety Investment Impact</CardTitle>
-          </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4">
               <div className="p-4 bg-blue-50 rounded-lg">
@@ -161,9 +151,6 @@ const FleetDashboard = () => {
 
         {/* Risk Analysis */}
         <Card className="col-span-1">
-          <CardHeader>
-            <CardTitle className="text-lg">Risk Prevention</CardTitle>
-          </CardHeader>
           <CardContent>
             <div className="space-y-3">
               <div className="flex justify-between items-center">

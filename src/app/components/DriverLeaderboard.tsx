@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Award, TrendingUp, Clock, Carrot } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Award, Clock, Carrot } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
 
 const DriverLeaderboard = () => {
   const [timeRange, setTimeRange] = useState('shift');
